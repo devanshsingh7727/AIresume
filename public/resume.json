@@ -1,0 +1,280 @@
+{
+  "personalInfo": {
+    "name": "DEVANSH",
+    "lastName": "SINGH",
+    "title": "AI Engineer & Full Stack Developer",
+    "tagline": "Available for AI Engineering Roles",
+    "description": "Transforming revolutionary ideas into intelligent solutions with cutting-edge ML, AI, and modern web technologies.",
+    "subtitle": "Building the future, one algorithm at a time.",
+    "location": "Sector 46, Gurugram, Haryana, 122506, India",
+    "email": "devanshsingh2199@gmail.com",
+    "phone": "+91 9461886086",
+    "experience": "5+ Years Experience",
+    "clientsServed": "50+ Happy Clients",
+    "website": "http://www.timbakerdev.com",
+    "resumedownload": "http://timbakerdev.com"
+  },
+  "typewriterTexts": [
+    "AI Engineer & ML Specialist",
+    "Full Stack Developer",
+    "Computer Vision Expert",
+    "Cloud Architecture Designer",
+    "Innovation Catalyst"
+  ],
+  "stats": [
+    {
+      "number": "25+",
+      "label": "AI Projects",
+      "icon": "Brain"
+    },
+    {
+      "number": "5+",
+      "label": "Years Experience",
+      "icon": "Calendar"
+    },
+    {
+      "number": "98%",
+      "label": "Success Rate",
+      "icon": "Award"
+    },
+    {
+      "number": "50K+",
+      "label": "Lines of Code",
+      "icon": "Code"
+    }
+  ],
+  "about": {
+    "title": "About Me",
+    "paragraphs": [
+      "I'm a passionate AI Engineer and Full Stack Developer with over 5 years of experience building intelligent solutions that make a real impact.",
+      "I work as a full stack developer at Vinove Services, building scalable web apps and intelligent systems.",
+      "An athlete at heart, I blend entrepreneurial spirit with tech enthusiasm. I love traveling, coding, and juggling multiple projects globally."
+    ],
+    "highlights": [
+      "Machine Learning & Deep Learning",
+      "Full Stack Web Development",
+      "Cloud Architecture & DevOps",
+      "OpenAI Integrations"
+    ]
+  },
+  "education": [
+    {
+      "school": "Dronacharya College of Engineering, Gurgaon",
+      "degree": "Masters of Technology in Computer Science And Engineering",
+      "graduated": "June 2023",
+      "description": ""
+    },
+    {
+      "school": "Dronacharya College of Engineering, Gurgaon",
+      "degree": "Bachelor of Technology in Computer Science And Information Technology",
+      "graduated": "June 2021",
+      "description": ""
+    }
+  ],
+  "skills": [
+    {
+      "name": "Machine Learning",
+      "description": "Advanced ML algorithms, deep learning models, and neural network architectures for complex problem solving.",
+      "projects": "15+ ML Projects",
+      "level": 95,
+      "color": "from-purple-500 to-pink-500",
+      "icon": "Brain"
+    },
+    {
+      "name": "Full Stack Development",
+      "description": "Modern web applications with React, Node.js, and cloud technologies for scalable solutions.",
+      "projects": "20+ Web Apps",
+      "level": 92,
+      "color": "from-blue-500 to-cyan-500",
+      "icon": "Code"
+    },
+    {
+      "name": "Computer Vision",
+      "description": "Image processing, object detection, and visual AI systems for real-world applications.",
+      "projects": "10+ CV Projects",
+      "level": 88,
+      "color": "from-green-500 to-teal-500",
+      "icon": "Eye"
+    },
+    {
+      "name": "Cloud & DevOps",
+      "description": "AWS, Docker, Kubernetes, and CI/CD pipelines for robust and scalable deployments.",
+      "projects": "25+ Deployments",
+      "level": 85,
+      "color": "from-yellow-500 to-orange-500",
+      "icon": "Cloud"
+    }
+   
+  ],
+  "projects": [
+    {
+      "title": "AI-Powered Analytics Platform",
+      "subtitle": "Advanced ML Dashboard",
+      "description": "...",
+      "icon": "\ud83e\udd16",
+      "gradient": "from-purple-500 to-pink-500",
+      "featured": true,
+      "tech": [
+        "Python",
+        "TensorFlow",
+        "React",
+        "AWS",
+        "Docker"
+      ],
+      "stats": {
+        "accuracy": "96%",
+        "users": "10K+",
+        "models": "15+"
+      },
+      "url": "https://github.com/devanshsinghvaluecoders"
+    },
+    {
+      "title": "Computer Vision Suite",
+      "subtitle": "Object Detection & Recognition",
+      "description": "...",
+      "icon": "\ud83d\udc41\ufe0f",
+      "gradient": "from-blue-500 to-cyan-500",
+      "featured": false,
+      "tech": [
+        "OpenCV",
+        "PyTorch",
+        "YOLO",
+        "FastAPI",
+        "Redis"
+      ],
+      "stats": {
+        "precision": "94%",
+        "speed": "60 FPS",
+        "classes": "80+"
+      },
+      "url": "https://github.com/devanshsinghvaluecoders"
+    },
+    {
+      "title": "NLP Sentiment Analyzer",
+      "subtitle": "Advanced Text Processing",
+      "description": "...",
+      "icon": "\ud83d\udcdd",
+      "gradient": "from-green-500 to-teal-500",
+      "featured": true,
+      "tech": [
+        "BERT",
+        "Transformers",
+        "spaCy",
+        "Flask",
+        "MongoDB"
+      ],
+      "stats": {
+        "accuracy": "92%",
+        "languages": "12+",
+        "requests": "1M+"
+      },
+      "url": "https://github.com/devanshsinghvaluecoders"
+    },
+    {
+      "title": "Smart IoT Dashboard",
+      "subtitle": "Real-time Data Visualization",
+      "description": "...",
+      "icon": "\ud83d\udcca",
+      "gradient": "from-yellow-500 to-orange-500",
+      "featured": false,
+      "tech": [
+        "React",
+        "Node.js",
+        "InfluxDB",
+        "Grafana",
+        "MQTT"
+      ],
+      "stats": {
+        "devices": "500+",
+        "uptime": "99.9%",
+        "alerts": "24/7"
+      },
+      "url": "https://github.com/devanshsinghvaluecoders"
+    }
+    
+  ],
+"experience": [
+  {
+    "company": "ValueCoders",
+    "role": "Senior AI Engineer",
+    "duration": "2022 - Present",
+    "description": "Leading AI initiatives and developing cutting-edge ML solutions",
+    "achievements": [
+      "Led 15+ AI projects",
+      "Improved model accuracy by 25%",
+      "Mentored junior developers"
+    ]
+  },
+  {
+    "company": "Tech Innovation Lab",
+    "role": "Full Stack Developer",
+    "duration": "2020 - 2022",
+    "description": "Built scalable web applications and APIs",
+    "achievements": [
+      "Developed 10+ production apps",
+      "Reduced load times by 40%",
+      "Implemented CI/CD pipelines"
+    ]
+  }
+]
+,
+  "testimonials": [
+    {
+      "text": "Devansh is an excellent resource... master at embedded programming...",
+      "user": "Mirdula Vats - Python Developer"
+    },
+    {
+      "text": "Always a pleasure working with Devansh...",
+      "user": "Shruti Purva - UI Developer"
+    }
+  ],
+  "navigation": [
+    {
+      "name": "Home",
+      "id": "home"
+    },
+    {
+      "name": "About",
+      "id": "about"
+    },
+    {
+      "name": "Skills",
+      "id": "skills"
+    },
+    {
+      "name": "Projects",
+      "id": "projects"
+    },
+    {
+      "name": "Experience",
+      "id": "experience"
+    },
+    {
+      "name": "Contact",
+      "id": "contact"
+    }
+  ],
+  "socialLinks": {
+    "github": "https://github.com/devanshsinghvaluecoders",
+    "linkedin": "https://www.linkedin.com/in/devansh-singh-0515001a0/",
+    "instagram": "https://www.instagram.com/devanshsingh5854/",
+    "email": "mailto:devanshsingh2199@gmail.com",
+    "phone": "tel:+919461886086"
+  },
+  "contact": {
+    "title": "Let's Build the Future Together",
+    "description": "Ready to transform your ideas into intelligent solutions? Let's connect and create something extraordinary that will shape tomorrow's world.",
+    "ctaTitle": "Ready to Start?",
+    "ctaDescription": "Whether it's an AI project, web development, or consultation, I'm here to help bring your vision to life with cutting-edge technology.",
+    "responseTime": "Response within 24 hours \u26a1"
+  },
+  "footer": {
+    "brandMain": "DS",
+    "brandSub": ".AI",
+
+    "description": "Crafting intelligent solutions with AI & React \u2728",
+    "copyright": "\u00a9 2025 Devansh Singh. All rights reserved.",
+    "buildNote": "Built with passion, powered by innovation",
+    "status": "Available for hire"
+  }
+}

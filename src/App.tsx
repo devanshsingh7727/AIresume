@@ -66,61 +66,10 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
     };
   }, []);
 
-  const skills = [
-    { icon: Brain, name: 'Machine Learning', level: 95, color: 'from-purple-500 via-pink-500 to-red-500', description: 'Neural Networks, Deep Learning, TensorFlow', projects: '15+ Projects' },
-    ];
 
-  const projects = [
-    {
-      title: 'AI House Inspector',
-      subtitle: 'Revolutionary Real Estate AI',
-      description: 'Global AI-powered platform transforming real estate market with intelligent inspection capabilities, predictive analytics, and automated reporting systems.',
-      tech: ['Next.js', 'OpenAI GPT-4', 'MongoDB Atlas', 'Azure AI', 'Computer Vision'],
-      url: 'https://smw-house.vercel.app/',
-      gradient: 'from-purple-600 via-blue-600 to-cyan-600',
-      icon: '🏠',
-      stats: { users: '5K+', accuracy: '98%', time: '10x Faster' },
-      featured: true
-    },
-      {
-      title: 'AI House Inspector',
-      subtitle: 'Revolutionary Real Estate AI',
-      description: 'Global AI-powered platform transforming real estate market with intelligent inspection capabilities, predictive analytics, and automated reporting systems.',
-      tech: ['Next.js', 'OpenAI GPT-4', 'MongoDB Atlas', 'Azure AI', 'Computer Vision'],
-      url: 'https://smw-house.vercel.app/',
-      gradient: 'from-purple-600 via-blue-600 to-cyan-600',
-      icon: '🏠',
-      stats: { users: '5K+', accuracy: '98%', time: '10x Faster' },
-      featured: true
-    },    {
-      title: 'AI House Inspector',
-      subtitle: 'Revolutionary Real Estate AI',
-      description: 'Global AI-powered platform transforming real estate market with intelligent inspection capabilities, predictive analytics, and automated reporting systems.',
-      tech: ['Next.js', 'OpenAI GPT-4', 'MongoDB Atlas', 'Azure AI', 'Computer Vision'],
-      url: 'https://smw-house.vercel.app/',
-      gradient: 'from-purple-600 via-blue-600 to-cyan-600',
-      icon: '🏠',
-      stats: { users: '5K+', accuracy: '98%', time: '10x Faster' },
-      featured: true
-    },
-  ];
 
-  const experience = [
-    {
-      company: 'ValueCoders',
-      role: 'Senior AI Engineer',
-      duration: '2022 - Present',
-      description: 'Leading AI initiatives and developing cutting-edge ML solutions',
-      achievements: ['Led 15+ AI projects', 'Improved model accuracy by 25%', 'Mentored junior developers']
-    },
-    {
-      company: 'Tech Innovation Lab',
-      role: 'Full Stack Developer',
-      duration: '2020 - 2022',
-      description: 'Built scalable web applications and APIs',
-      achievements: ['Developed 10+ production apps', 'Reduced load times by 40%', 'Implemented CI/CD pipelines']
-    }
-  ];
+ 
+
 
   const ParticleField = () => {
     const particles = Array.from({ length: particleCount }, (_, i) => ({
@@ -175,9 +124,20 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
   const scrollToSection = (sectionId:any) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
+ const [profileData, setData] = useState<any>(null);
+
+  useEffect(() => {
+    fetch('/resume.json') // no need for relative paths, just start from public root
+      .then(response => {
+        if (!response.ok) throw new Error('Failed to fetch');
+        return response.json();
+      })
+      .then(json => setData(json))
+      .catch(error => console.error('Error loading JSON:', error));
+  }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden relative">
+   profileData&& <div className="min-h-screen bg-black text-white overflow-hidden relative">
        
       <style>{`
         @keyframes scale-in {
@@ -373,7 +333,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
             <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 glass-card rounded-full text-xs sm:text-sm mb-6 sm:mb-8 hover-lift transition-all duration-300">
               <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
               <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
-              <span>Available for AI Engineering Roles</span>
+            <span>{profileData?.personalInfo?.tagline}</span>
               <div className="w-10 h-0.5 sm:w-16 sm:h-0.5 bg-gradient-to-r from-green-400 to-blue-400"></div>
             </div>
           </div>
@@ -383,11 +343,11 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
             <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black leading-none">
               <div className="relative inline-block">
                 <span className="block bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
-                  DEVANSH
+                  {profileData?.personalInfo?.name}
                 </span>
                 {/* Subtle glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400/30 via-blue-400/30 to-pink-400/30 bg-clip-text text-transparent blur-sm">
-                  DEVANSH
+                  {profileData?.personalInfo?.name}
                 </div>
                 {/* Modern accent line */}
                 <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500 rounded-full transform origin-left scale-x-0 animate-scale-in"></div>
@@ -395,7 +355,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
             </h1>
             
             <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-light tracking-[0.2em] text-white/70 mt-2">
-              SINGH
+              {profileData?.personalInfo?.lastName}
             </h2>
           </div>
         </div>
@@ -408,9 +368,9 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
             </div>
             
             <div className="text-base sm:text-lg md:text-xl text-white/70 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4">
-              Transforming revolutionary ideas into intelligent solutions with cutting-edge ML, AI, and modern web technologies. 
+              {profileData?.personalInfo?.description}
               <br className="hidden md:block" />
-              <span className="text-purple-400 font-semibold">Building the future, one algorithm at a time.</span>
+              <span className="text-purple-400 font-semibold">{profileData?.personalInfo?.subtitle}</span>
             </div>
           </div>
 
@@ -433,12 +393,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
           </div>
 
           <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 max-w-2xl mx-auto mb-12 sm:mb-20 transition-all duration-2000 delay-1200 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-            {[
-              { number: '25+', label: 'AI Projects', icon: Brain },
-              { number: '5+', label: 'Years Experience', icon: Calendar },
-              { number: '98%', label: 'Success Rate', icon: Award },
-              { number: '50K+', label: 'Lines of Code', icon: Code }
-            ].map((stat, i) => {
+            {profileData?.stats?.map((stat: any, i: number)=> {
               const Icon = stat.icon;
               return (
                 <div key={i} className="text-center glass-card p-4 sm:p-6 rounded-xl sm:rounded-2xl hover-lift transition-all duration-300 group">
@@ -465,7 +420,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
               <h2 className="text-3xl sm:text-5xl font-black mb-6 sm:mb-8">
-                <span className="text-hologram">About Me</span>
+                <span className="text-hologram">{profileData.about.title}</span>
               </h2>
               <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-white/80 leading-relaxed">
                 <p>
@@ -493,7 +448,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
                 <div className="glass-card p-4 sm:p-6 rounded-xl sm:rounded-2xl">
                   <Users className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400 mb-3" />
                   <div className="text-xs sm:text-sm text-white/60">Clients Served</div>
-                  <div className="font-semibold text-sm sm:text-base">50+ Happy Clients</div>
+                  <div className="font-semibold text-sm sm:text-base">{profileData.personalInfo.clientsServed}</div>
                 </div>
               </div>
             </div>
@@ -511,12 +466,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
                   </div>
                   
                   <div className="space-y-3 sm:space-y-4">
-                    {[
-                      'Machine Learning & Deep Learning',
-                      'Computer Vision & NLP',
-                      'Full Stack Web Development',
-                      'Cloud Architecture & DevOps'
-                    ].map((skill, i) => (
+                    {profileData.about.highlights.map((skill:any, i:any) => (
                       <div key={i} className="flex items-center gap-3 p-3 glass-card rounded-xl">
                         <Star className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
                         <span className="text-white/90 text-sm sm:text-base">{skill}</span>
@@ -542,7 +492,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
           </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {skills.map((skill, index) => {
+            {profileData?.skills?.map((skill:any, index:any) => {
               const Icon = skill.icon;
               return (
                 <div key={index} className="group relative">
@@ -594,7 +544,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-        {projects.map((project, index) => (
+        {profileData?.projects?.map((project:any, index:any) => (
           <div key={index} className="group relative">
             <div className="glass-card rounded-2xl md:rounded-3xl overflow-hidden hover-lift transition-all duration-500 border-2 border-transparent hover:border-purple-500/30 h-full">
               <div className="flex flex-col h-full">
@@ -635,7 +585,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
                   
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech, i) => (
+                    {project.tech.map((tech:any, i:any) => (
                       <span key={i} className="px-3 py-1.5 glass-card rounded-lg text-xs border border-purple-500/30 hover:border-purple-400 transition-colors duration-300">
                         {tech}
                       </span>
@@ -646,7 +596,8 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
                   <div className="grid grid-cols-3 gap-2 mb-6">
                     {Object.entries(project.stats).map(([key, value], i) => (
                       <div key={i} className="text-center glass-card p-2 md:p-3 rounded-lg">
-                        <div className="text-sm md:text-base font-bold text-hologram">{value}</div>
+              <div className="text-sm md:text-base font-bold text-hologram">{String(value)}</div>
+
                         <div className="text-xs text-white/60 capitalize leading-tight">{key}</div>
                       </div>
                     ))}
@@ -697,7 +648,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
         <div className="md:hidden absolute left-6 top-0 w-1 h-full bg-gradient-to-b from-purple-500 via-blue-500 to-pink-500 rounded-full"></div>
         
         <div className="space-y-8 md:space-y-16">
-          {experience.map((exp, index) => (
+          {profileData?.experience.map((exp:any, index:any) => (
             <div key={index} className={`flex items-start md:items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
               {/* Mobile Layout - Always left aligned */}
               <div className="md:hidden flex items-start w-full">
@@ -717,7 +668,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
                     <p className="text-white/80 mb-4 leading-relaxed text-sm">{exp.description}</p>
                     
                     <div className="space-y-2">
-                      {exp.achievements.map((achievement, i) => (
+                      {exp.achievements.map((achievement:any, i:any) => (
                         <div key={i} className="flex items-start gap-2">
                           <Star className="w-3 h-3 text-yellow-400 mt-0.5 flex-shrink-0" />
                           <span className="text-xs text-white/80">{achievement}</span>
@@ -737,7 +688,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
                   <p className="text-white/80 mb-6 leading-relaxed">{exp.description}</p>
                   
                   <div className={`space-y-2 ${index % 2 === 0 ? 'flex flex-col items-end' : ''}`}>
-                    {exp.achievements.map((achievement, i) => (
+                    {exp.achievements.map((achievement:any, i:any) => (
                       <div key={i} className={`flex items-center gap-2 ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
                         <Star className="w-4 h-4 text-yellow-400" />
                         <span className="text-sm text-white/80">{achievement}</span>
@@ -862,26 +813,28 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-center md:text-left">
               <div className="text-2xl font-black mb-2">
-                <span className="text-hologram">DS</span>
-                <span className="text-white/60">.AI</span>
+                <span className="text-hologram">{profileData.footer.brandMain}</span>
+                <span className="text-white/60">{profileData.footer.brandSub}</span>
               </div>
               <p className="text-white/60 text-sm">
-                Crafting intelligent solutions with AI & React ✨
+                {profileData.footer.description}
               </p>
             </div>
             
             <div className="text-center">
               <p className="text-white/60 text-sm mb-2">
-                © 2025 Devansh Singh. All rights reserved.
+                          {profileData.footer.copyright}
+
               </p>
               <p className="text-white/40 text-xs">
-                Built with passion, powered by innovation
+                                         {profileData.footer.buildNote}
+
               </p>
             </div>
             
             <div className="flex gap-4">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-xs text-white/60">Available for hire</span>
+              <span className="text-xs text-white/60">{profileData.footer.status}</span>
             </div>
           </div>
         </div>
