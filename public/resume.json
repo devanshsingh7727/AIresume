@@ -148,7 +148,7 @@
         "apis": "50+",
         "features": "MCP"
       },
-      "url": "https://github.com/devanshsinghvaluecoders"
+      "url": "https://buildacopilot.com/"
     },
     {
       "title": "Dine Pulse",
@@ -169,7 +169,7 @@
         "analytics": "Real-time",
         "channel": "WhatsApp"
       },
-      "url": "https://github.com/devanshsinghvaluecoders"
+      "url": "https://dine-pulse.vercel.app/"
     },
     {
       "title": "LocalLLMChat",
@@ -190,7 +190,7 @@
         "mode": "Offline",
         "search": "RAG"
       },
-      "url": "https://github.com/devanshsinghvaluecoders"
+      "url": ""
     }
   ],
   "experience": [

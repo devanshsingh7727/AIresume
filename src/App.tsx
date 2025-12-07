@@ -1,5 +1,5 @@
 
-import { ArrowRight, Award, Brain, Briefcase, BookOpen, Calendar, ChevronDown, Cloud, Code, CreditCard, Cpu, Database, ExternalLink, Eye, Github, GitBranch, Linkedin, Mail, MapPin, Phone, Rocket, Smartphone, Sparkles, Star, TestTube, Users, Quote } from 'lucide-react';
+import { ArrowRight, Award, Brain, Briefcase, BookOpen, Calendar, ChevronDown, Cloud, Code, CreditCard, Cpu, Database, ExternalLink, Eye, Github, GitBranch, Linkedin, Mail, MapPin, MessageCircle, Phone, Rocket, Smartphone, Sparkles, Star, TestTube, Users, Quote } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 // Icon mapping for dynamic icon rendering
@@ -115,7 +115,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
         {particles.map((particle) => (
           <div
             key={particle.id}
-            className="absolute rounded-full bg-gradient-to-r from-blue-400 to-purple-400"
+            className="absolute rounded-full bg-gradient-to-r from-blue-400 to-cyan-400"
             style={{
               left: `${particle.x}%`,
               top: `${particle.y}%`,
@@ -188,7 +188,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
     }
     
     .text-hologram {
-      background: linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899, #8b5cf6);
+      background: linear-gradient(45deg, #3b82f6, #06b6d4, #60a5fa, #3b82f6);
       background-size: 200% 200%;
       background-clip: text;
       -webkit-background-clip: text;
@@ -303,7 +303,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
           left: mousePosition.x - 12,
           top: mousePosition.y - 12,
           transform: `scale(${mousePosition.x > 0 ? 1 : 0})`,
-          background: 'radial-gradient(circle, rgba(139, 92, 246, 0.8) 0%, rgba(236, 72, 153, 0.6) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, rgba(6, 182, 212, 0.6) 50%, transparent 70%)',
           borderRadius: '50%',
           filter: 'blur(1px)'
         }}
@@ -328,7 +328,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
               <div className="text-xl sm:text-2xl font-black cursor-pointer" onClick={() => scrollToSection('home')}>
                 <span className="text-hologram">DS</span>
                 <span className="text-white/60">.AI</span>
-                <div className="w-6 h-0.5 sm:w-8 sm:h-1 bg-gradient-to-r from-purple-500 to-pink-500 mt-1"></div>
+                <div className="w-6 h-0.5 sm:w-8 sm:h-1 bg-gradient-to-r from-blue-500 to-cyan-400 mt-1"></div>
               </div>
               <div className="hidden md:flex space-x-8 text-sm">
                 {[
@@ -347,7 +347,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
                        transform: isLoaded ? 'translateY(0)' : 'translateY(-10px)'
                      }}>
                     {item.name}
-                    <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 group-hover:w-full transition-all duration-300"></div>
+                    <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></div>
                   </button>
                 ))}
               </div>
@@ -405,7 +405,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
           <div className={`transition-all duration-1500 mt-16 lg:pt-8 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-200 opacity-0'}`}>
             <div className="inline-flex items-center gap-2 sm:gap-2.5 px-2.5 py-1.5 sm:px-5 sm:py-2.5 glass-card rounded-full text-xs mb-6 sm:mb-10 hover-lift transition-all duration-300">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <Sparkles className="w-3 h-3 text-purple-400" />
+              <Sparkles className="w-3 h-3 text-blue-400" />
             <span>{profileData?.personalInfo?.tagline}</span>
               <div className="w-8 h-0.5 sm:w-14 sm:h-0.5 bg-gradient-to-r from-green-400 to-blue-400"></div>
             </div>
@@ -419,11 +419,11 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
                   {profileData?.personalInfo?.name}
                 </span>
                 {/* Subtle glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-400/30 via-blue-400/30 to-pink-400/30 bg-clip-text text-transparent blur-sm">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/30 via-cyan-400/30 to-sky-400/30 bg-clip-text text-transparent blur-sm">
                   {profileData?.personalInfo?.name}
                 </div>
                 {/* Modern accent line */}
-                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500 rounded-full transform origin-left scale-x-0 animate-scale-in"></div>
+                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-sky-400 rounded-full transform origin-left scale-x-0 animate-scale-in"></div>
               </div>
             </h1>
             
@@ -443,13 +443,13 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
             <div className="text-sm sm:text-base md:text-lg text-white/70 mb-10 sm:mb-14 max-w-3xl mx-auto leading-relaxed px-4">
               {profileData?.personalInfo?.description}
               <br className="hidden md:block" />
-              <span className="text-purple-400 font-semibold">{profileData?.personalInfo?.subtitle}</span>
+              <span className="text-blue-400 font-semibold">{profileData?.personalInfo?.subtitle}</span>
             </div>
           </div>
 
           <div className={`flex flex-col sm:flex-row gap-5 sm:gap-6 justify-center mb-10 sm:mb-16 transition-all duration-2000 delay-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-            <button onClick={() => scrollToSection('projects')} className="group relative px-4 py-2 sm:px-8 sm:py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-xl font-bold text-sm sm:text-base hover:scale-105 transition-all duration-300 transform shadow-2xl hover:shadow-purple-500/50 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <button onClick={() => scrollToSection('projects')} className="group relative px-4 py-2 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-600 bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-xl font-bold text-sm sm:text-base hover:scale-105 transition-all duration-300 transform shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span className="relative flex items-center justify-center gap-3">
                 <Rocket className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform duration-300" />
                 Explore AI Projects
@@ -470,21 +470,21 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
               const IconComponent = iconMap[stat.icon] || Brain;
               return (
                 <div key={i} className="text-center glass-card p-3 sm:p-6 rounded-xl sm:rounded-2xl hover-lift transition-all duration-300 group">
-                  <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
+                  <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
                   <div className="text-2xl sm:text-3xl font-black text-hologram mb-1">{stat.number}</div>
                   <div className="text-xs sm:text-sm text-white/70">{stat.label}</div>
                 </div>
               );
             })}
           </div>
-
+{/* 
           <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2">
             <div className="flex flex-col items-center gap-2 animate-bounce cursor-pointer" onClick={() => scrollToSection('about')}>
               <div className="text-xs text-white/60 font-semibold tracking-wider">SCROLL TO EXPLORE</div>
               <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
               <div className="w-0.5 h-6 sm:h-8 bg-gradient-to-b from-purple-400 to-transparent"></div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -497,7 +497,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
               </h2>
               <div className="space-y-3 sm:space-y-5 text-sm sm:text-base text-white/80 leading-relaxed">
                 <p>
-                  I'm a passionate <span className="text-purple-400 font-semibold">AI Engineer</span> and 
+                  I'm a passionate <span className="text-blue-400 font-semibold">AI Engineer</span> and 
                   <span className="text-blue-400 font-semibold"> Full Stack Developer</span> with over 5 years of experience 
                   building intelligent solutions that make a real impact.
                 </p>
@@ -507,14 +507,14 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
                   user-friendly products that solve real-world problems.
                 </p>
                 <p>
-                  Currently based in <span className="text-purple-400 font-semibold">Dublin, Ireland</span>, 
+                  Currently based in <span className="text-blue-400 font-semibold">Dublin, Ireland</span>, 
                   I work with global clients to bring their AI visions to life.
                 </p>
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5 mt-6 sm:mt-10">
                 <div className="glass-card p-4 sm:p-5 rounded-xl">
-                  <MapPin className="w-6 h-6 sm:w-7 sm:h-7 text-purple-400 mb-2" />
+                  <MapPin className="w-6 h-6 sm:w-7 sm:h-7 text-blue-400 mb-2" />
                   <div className="text-xs sm:text-sm text-white/60">Location</div>
                   <div className="font-semibold text-sm">Dublin, Ireland</div>
                 </div>
@@ -533,10 +533,10 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
             
             <div className="relative mt-6 lg:mt-0">
               <div className="glass-card p-5 sm:p-6 rounded-2xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-pink-500/10"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-cyan-500/10 to-sky-400/10"></div>
                 <div className="relative z-10">
                   <div className="text-center mb-5 sm:mb-6">
-                    <div className="w-20 h-20 sm:w-28 sm:h-28 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full mx-auto mb-3 sm:mb-5 flex items-center justify-center text-3xl sm:text-5xl">
+                    <div className="w-20 h-20 sm:w-28 sm:h-28 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full mx-auto mb-3 sm:mb-5 flex items-center justify-center text-3xl sm:text-5xl">
                       🧠
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold text-hologram mb-2">AI Innovation Expert</h3>
@@ -572,21 +572,21 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
           
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-blue-500 to-pink-500 transform sm:-translate-x-1/2"></div>
+            <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-cyan-500 to-blue-600 transform sm:-translate-x-1/2"></div>
             
             <div className="space-y-8 sm:space-y-12">
               {profileData?.education?.map((edu: any, index: number) => (
                 <div key={index} className={`relative flex gap-6 sm:gap-8 ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'}`}>
                   {/* Timeline dot */}
-                  <div className="absolute left-4 sm:left-1/2 w-4 h-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full transform sm:-translate-x-1/2 ring-4 ring-black z-10"></div>
+                  <div className="absolute left-4 sm:left-1/2 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full transform sm:-translate-x-1/2 ring-4 ring-black z-10"></div>
                   
                   {/* Content card */}
                   <div className={`flex-1 ml-12 sm:ml-0 ${index % 2 === 0 ? 'sm:pr-8 sm:text-right' : 'sm:pl-8 sm:text-left'}`}>
-                    <div className="glass-card p-5 sm:p-7 rounded-2xl hover-lift transition-all duration-500 border-2 border-transparent hover:border-purple-500/30 group">
+                    <div className="glass-card p-5 sm:p-7 rounded-2xl hover-lift transition-all duration-500 border-2 border-transparent hover:border-blue-500/30 group">
                       <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                       
                       <div className="relative z-10">
-                        <div className="inline-block px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-xs font-bold mb-3">
+                        <div className="inline-block px-3 py-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full text-xs font-bold mb-3">
                           {edu.graduated}
                         </div>
                         <h3 className="text-lg sm:text-xl font-bold text-hologram mb-2">
@@ -679,7 +679,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
               <div className="flex flex-col h-full">
                 
                 {/* Visual Section */}
-                <div className="relative overflow-hidden h-32 sm:h-56">
+                {/* <div className="relative overflow-hidden h-32 sm:h-56">
                   <div className={`h-full bg-gradient-to-br ${project.gradient} relative flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
                     <div className="text-4xl sm:text-6xl opacity-80 group-hover:rotate-12 transition-transform duration-500">
                       {project.icon}
@@ -687,7 +687,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
                     <div className="absolute inset-0 bg-black/20"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   </div>
-                </div>
+                </div> */}
                 
                 {/* Content Section */}
                 <div className="p-3 sm:p-8 flex flex-col flex-1">
@@ -892,15 +892,15 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-10">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 mb-10">
             {profileData?.recommendations?.map((rec: any, index: number) => (
-              <div key={index} className="glass-card p-6 sm:p-8 rounded-2xl hover-lift transition-all duration-500 border-2 border-transparent hover:border-purple-500/30 relative overflow-hidden group">
+              <div key={index} className="glass-card p-4 sm:p-5 rounded-xl hover-lift transition-all duration-500 border-2 border-transparent hover:border-blue-500/30 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 <div className="relative z-10">
-                  <Quote className="w-8 h-8 text-purple-400 mb-4 opacity-50" />
+                  <Quote className="w-6 h-6 text-blue-400 mb-3 opacity-50" />
                   
-                  <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-6 line-clamp-6 group-hover:line-clamp-none transition-all duration-300">
+                  <p className="text-white/80 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-6 group-hover:line-clamp-none transition-all duration-300">
                     "{rec.text}"
                   </p>
                   
@@ -909,13 +909,13 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
                       {rec.name.charAt(0)}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-white text-sm sm:text-base">{rec.name}</h4>
-                      <p className="text-white/60 text-xs sm:text-sm">{rec.title}</p>
-                      <p className="text-white/50 text-xs">{rec.company} • {rec.date}</p>
+                      <h4 className="font-bold text-white text-xs sm:text-sm">{rec.name}</h4>
+                      <p className="text-white/60 text-[10px] sm:text-xs">{rec.title}</p>
+                      <p className="text-white/50 text-[10px]">{rec.company} • {rec.date}</p>
                     </div>
                   </div>
                   
-                  <div className="mt-3 text-xs text-purple-400">
+                  <div className="mt-2 text-[10px] sm:text-xs text-blue-400">
                     {rec.relationship}
                   </div>
                 </div>
@@ -923,16 +923,16 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
             ))}
           </div>
           
-          <div className="text-center">
+          <div className="text-center px-4">
             <a 
               href="https://linkedin.com/in/iamdevanshsingh/details/recommendations/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 transform hover:scale-105 font-bold shadow-2xl hover:shadow-blue-500/50"
+              className="inline-flex items-center justify-center gap-2 md:gap-3 px-4 py-3 md:px-8 md:py-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg md:rounded-xl hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 transform hover:scale-105 font-semibold md:font-bold text-sm md:text-base shadow-2xl hover:shadow-blue-500/50 w-full sm:w-auto max-w-full"
             >
-              <Linkedin className="w-5 h-5" />
-              <span>View All Recommendations on LinkedIn</span>
-              <ExternalLink className="w-4 h-4" />
+              <Linkedin className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+              <span className="truncate">View All Recommendations on LinkedIn</span>
+              <ExternalLink className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
             </a>
           </div>
         </div>
@@ -974,6 +974,19 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
                 <div>
                   <div className="font-semibold text-sm md:text-base">Phone</div>
                   <div className="text-white/70 text-xs md:text-sm">{profileData?.personalInfo?.phone}</div>
+                </div>
+              </a>
+              
+              <a href={`https://wa.me/${profileData?.personalInfo?.phone?.replace(/[^0-9]/g, '')}?text=Hi%20Devansh`} 
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="group flex items-center gap-3 md:gap-4 p-3 md:p-4 glass-card rounded-lg md:rounded-xl hover:bg-white/10 transition-all duration-300">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg md:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <MessageCircle className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="font-semibold text-sm md:text-base">WhatsApp</div>
+                  <div className="text-white/70 text-xs md:text-sm truncate">Message me instantly</div>
                 </div>
               </a>
               
