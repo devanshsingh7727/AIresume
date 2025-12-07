@@ -6,13 +6,14 @@
     "tagline": "Transforming ideas into intelligent solutions",
     "description": "Full-stack software engineer with 4+ years of experience in React.js, Next.js, Node.js, and AI integration, delivering scalable solutions with 30%+ performance improvements. Expert in cloud-native systems and advanced Gen AI technologies.",
     "subtitle": "Building the future, one algorithm at a time.",
-    "location": "Dublin, Ireland (Stamp 2 Visa)",
+    "location": "Dublin, Ireland",
+    "visaStatus": "Stamp 2 Visa",
     "email": "devanshsingh.ireland@gmail.com",
     "phone": "+353 870346099",
     "experience": "4+ Years Experience",
     "clientsServed": "50+ Happy Clients",
     "website": "https://linkedin.com/in/iamdevanshsingh",
-    "resumedownload": "#"
+    "resumedownload": "/DevanshSingh_Resume.pdf"
   },
   "typewriterTexts": [
     "AI Engineer & ML Specialist",
@@ -79,36 +80,52 @@
   ],
   "skills": [
     {
-      "name": "Frontend Development",
-      "description": "React.js, Next.js, React Native, TypeScript, Redux, Material UI, Tailwind, Remix.",
-      "projects": "20+ Web Apps",
-      "level": 95,
+      "category": "Frontend Development",
+      "icon": "Code",
       "color": "from-blue-500 to-cyan-500",
-      "icon": "Code"
+      "skills": ["React.js", "Next.js", "TypeScript", "Redux", "Material UI", "Tailwind CSS", "Remix", "Shopify", "JavaScript", "HTML/CSS", "jQuery", "Bootstrap", "Ionic", "ES6", "SSR", "SSG"]
     },
     {
-      "name": "Backend & Database",
-      "description": "Node.js, Express.js, NestJS, MongoDB, SQL, PostgreSQL, GraphQL, RabbitMQ.",
-      "projects": "15+ Systems",
-      "level": 90,
+      "category": "Backend & Database",
+      "icon": "Database",
       "color": "from-green-500 to-teal-500",
-      "icon": "Cpu"
+      "skills": ["Node.js", "Express.js", "NestJS", "MongoDB", "PostgreSQL", "SQL", "GraphQL", "RabbitMQ", "API Development", "REST APIs", "Microservices"]
     },
     {
-      "name": "AI & NLP",
-      "description": "OpenAI GPT-Models, Chatbots, NLP, AI Integration, Prompt Engineering, LangChain.",
-      "projects": "10+ AI Solutions",
-      "level": 92,
+      "category": "Mobile Development",
+      "icon": "Smartphone",
+      "color": "from-indigo-500 to-purple-500",
+      "skills": ["React Native", "Ionic", "Android", "iOS", "Cross-platform"]
+    },
+    {
+      "category": "AI & NLP",
+      "icon": "Brain",
       "color": "from-purple-500 to-pink-500",
-      "icon": "Brain"
+      "skills": ["OpenAI GPT", "LangChain", "Chatbots", "NLP", "RAG", "Prompt Engineering", "Model Context Protocol", "AI Integration", "Machine Learning"]
     },
     {
-      "name": "Cloud & DevOps",
-      "description": "AWS, Azure, Heroku, Vercel, Docker, Git, CI/CD.",
-      "projects": "25+ Deployments",
-      "level": 85,
+      "category": "Payment Solutions",
+      "icon": "CreditCard",
+      "color": "from-emerald-500 to-teal-500",
+      "skills": ["Stripe", "PayPal", "Payment Integration", "Transaction Processing"]
+    },
+    {
+      "category": "Cloud & DevOps",
+      "icon": "Cloud",
+      "color": "from-cyan-500 to-blue-500",
+      "skills": ["AWS", "Azure", "Docker", "Vercel", "Heroku", "Git", "Bitbucket", "CI/CD", "JIRA", "Confluence"]
+    },
+    {
+      "category": "Testing",
+      "icon": "TestTube",
+      "color": "from-orange-500 to-red-500",
+      "skills": ["Jest", "Unit Testing", "Integration Testing", "Test Automation"]
+    },
+    {
+      "category": "Software Engineering",
+      "icon": "GitBranch",
       "color": "from-yellow-500 to-orange-500",
-      "icon": "Cloud"
+      "skills": ["Microservices", "Code Review", "Agile", "Scrum", "System Design", "Architecture", "Continuous Learning"]
     }
   ],
   "projects": [
@@ -214,6 +231,66 @@
       ]
     }
   ],
+  "achievements": [
+    {
+      "title": "Open-Source AI Contributor",
+      "description": "Active contributor to generative AI projects and MCP servers, building intelligent agents",
+      "icon": "Github",
+      "gradient": "from-purple-500 to-pink-500"
+    },
+    {
+      "title": "Citi Upstart Developer",
+      "description": "Contributing to mobile and web applications with integrated AI solutions",
+      "icon": "Briefcase",
+      "gradient": "from-blue-500 to-cyan-500"
+    },
+    {
+      "title": "Published Researcher",
+      "description": "Authored blockchain research paper presented at ICSMDI 2023 conference",
+      "icon": "BookOpen",
+      "gradient": "from-green-500 to-teal-500"
+    },
+    {
+      "title": "CODU Platform Contributor",
+      "description": "Contributing to open-source newsletter platform, advancing community collaboration",
+      "icon": "Code",
+      "gradient": "from-yellow-500 to-orange-500"
+    }
+  ],
+  "recommendations": [
+    {
+      "name": "Anish Adarkar",
+      "title": "Digital Transformation Consultant | Certified SAFe® Agilist | CSM",
+      "company": "Deloitte",
+      "relationship": "Anish managed Devansh directly",
+      "text": "I had the pleasure of working with Devansh on a digital transformation project where we built a Shopify solution for a D2C client. As a front-end developer, Devansh consistently gave his 100% and was always willing to step up to handle last-minute requests with a positive attitude. He also brought strong expertise as an AEM developer, contributing significantly to building a robust and user-friendly product display page for a commerce website. Devansh's dedication, technical skills, and collaborative approach made him a valuable member of the team, and I highly recommend him for any future opportunities.",
+      "date": "September 2025"
+    },
+    {
+      "name": "Chandra Shekar Pavan Kumar",
+      "title": "Specialist Leader",
+      "company": "Deloitte",
+      "relationship": "Chandra Shekar managed Devansh directly",
+      "text": "Devansh is one of the Front end experts I have worked with. His in-depth React knowledge combined with exceptional problem-solving skills made him a key developer on the project. He optimised key aspects in our project like SEO, Performance, etc. It was a pleasure working with him.",
+      "date": "August 2025"
+    },
+    {
+      "name": "Avneet Pandey",
+      "title": "Software Developer | MERN & Next.js Expert | AI-Powered Web Apps",
+      "company": "ValueCoders",
+      "relationship": "Avneet worked with Devansh on the same team",
+      "text": "Devansh Singh brings a wealth of expertise in development and AI integration to the table. His proficiency in these areas played a pivotal role in driving our project forward. Devansh's collaborative approach and clear communication made him a valued member of our team, facilitating smooth coordination and problem-solving. I wholeheartedly endorse Devansh for his technical prowess and teamwork. His dedication to excellence and ability to seamlessly integrate AI technologies into our development process were commendable. Devansh's contributions significantly elevated the quality of our project, making him an invaluable asset to any team.",
+      "date": "April 2024"
+    },
+    {
+      "name": "Apoorva Singh",
+      "title": "Systems Integration Specialist",
+      "company": "NTT Data",
+      "relationship": "Apoorva managed Devansh directly",
+      "text": "I have worked with Devansh and his technical skills are fantastic. He never hesitates to take up any task and also he is a very good team player.",
+      "date": "May 2022"
+    }
+  ],
   "testimonials": [],
   "navigation": [
     {
@@ -223,6 +300,10 @@
     {
       "name": "About",
       "id": "about"
+    },
+    {
+      "name": "Education",
+      "id": "education"
     },
     {
       "name": "Skills",
@@ -237,14 +318,22 @@
       "id": "experience"
     },
     {
+      "name": "Achievements",
+      "id": "achievements"
+    },
+    {
+      "name": "Recommendations",
+      "id": "recommendations"
+    },
+    {
       "name": "Contact",
       "id": "contact"
     }
   ],
   "socialLinks": {
-    "github": "https://github.com/devanshsinghvaluecoders",
+    "github": "https://github.com/ai-engineer-devansh-singh",
     "linkedin": "https://linkedin.com/in/iamdevanshsingh",
-    "instagram": "https://www.instagram.com/devanshsingh5854/",
+    "instagram": "",
     "email": "mailto:devanshsingh.ireland@gmail.com",
     "phone": "tel:+353870346099"
   },

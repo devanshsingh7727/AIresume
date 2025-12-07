@@ -1,6 +1,24 @@
 
-import { ArrowRight, Award, Brain, Calendar, ChevronDown, Code, Cpu, ExternalLink, Eye, Github, Linkedin, Mail, MapPin, Phone, Rocket, Sparkles, Star, Users } from 'lucide-react';
+import { ArrowRight, Award, Brain, Briefcase, BookOpen, Calendar, ChevronDown, Cloud, Code, CreditCard, Cpu, Database, ExternalLink, Eye, Github, GitBranch, Linkedin, Mail, MapPin, Phone, Rocket, Smartphone, Sparkles, Star, TestTube, Users, Quote } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+
+// Icon mapping for dynamic icon rendering
+const iconMap: Record<string, any> = {
+  Brain,
+  Code,
+  Calendar,
+  Award,
+  Cloud,
+  Cpu,
+  Database,
+  Smartphone,
+  CreditCard,
+  GitBranch,
+  TestTube,
+  Github,
+  Briefcase,
+  BookOpen
+};
 
 const Portfolio = () => {
   const heroRef = useRef();
@@ -438,21 +456,21 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-300" />
               </span>
             </button>
-            <button className="group px-4 py-2 sm:px-8 sm:py-4 glass-card rounded-xl font-bold text-sm sm:text-base hover:bg-white/15 transition-all duration-300 transform hover:scale-105 border-2 border-transparent hover:border-purple-400/50 relative overflow-hidden">
+            <a href={profileData?.personalInfo?.resumedownload} download className="group px-4 py-2 sm:px-8 sm:py-4 glass-card rounded-xl font-bold text-sm sm:text-base hover:bg-white/15 transition-all duration-300 transform hover:scale-105 border-2 border-transparent hover:border-purple-400/50 relative overflow-hidden inline-block">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-pink-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span className="relative flex items-center justify-center gap-3">
                 <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
                 Download Resume
               </span>
-            </button>
+            </a>
           </div>
 
           <div className={`grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 max-w-2xl mx-auto mb-12 sm:mb-20 transition-all duration-2000 delay-1200 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
             {profileData?.stats?.map((stat: any, i: number)=> {
-              const Icon = stat.icon;
+              const IconComponent = iconMap[stat.icon] || Brain;
               return (
                 <div key={i} className="text-center glass-card p-3 sm:p-6 rounded-xl sm:rounded-2xl hover-lift transition-all duration-300 group">
-                  <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
+                  <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
                   <div className="text-2xl sm:text-3xl font-black text-hologram mb-1">{stat.number}</div>
                   <div className="text-xs sm:text-sm text-white/70">{stat.label}</div>
                 </div>
@@ -505,6 +523,11 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
                   <div className="text-xs sm:text-sm text-white/60">Clients Served</div>
                   <div className="font-semibold text-sm">{profileData.personalInfo.clientsServed}</div>
                 </div>
+                <div className="glass-card p-4 sm:p-5 rounded-xl">
+                  <Award className="w-6 h-6 sm:w-7 sm:h-7 text-green-400 mb-2" />
+                  <div className="text-xs sm:text-sm text-white/60">Visa Status</div>
+                  <div className="font-semibold text-sm">{profileData.personalInfo.visaStatus}</div>
+                </div>
               </div>
             </div>
             
@@ -535,6 +558,59 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
         </div>
       </section>
 
+      {/* Education Section */}
+      <section id="education" className="py-12 sm:py-24 px-4 sm:px-6 relative">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-4xl font-black mb-4 sm:mb-5">
+              <span className="text-hologram">Education</span>
+            </h2>
+            <p className="text-sm sm:text-lg text-white/70 max-w-3xl mx-auto">
+              Academic foundation in Computer Science and Artificial Intelligence
+            </p>
+          </div>
+          
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-blue-500 to-pink-500 transform sm:-translate-x-1/2"></div>
+            
+            <div className="space-y-8 sm:space-y-12">
+              {profileData?.education?.map((edu: any, index: number) => (
+                <div key={index} className={`relative flex gap-6 sm:gap-8 ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'}`}>
+                  {/* Timeline dot */}
+                  <div className="absolute left-4 sm:left-1/2 w-4 h-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full transform sm:-translate-x-1/2 ring-4 ring-black z-10"></div>
+                  
+                  {/* Content card */}
+                  <div className={`flex-1 ml-12 sm:ml-0 ${index % 2 === 0 ? 'sm:pr-8 sm:text-right' : 'sm:pl-8 sm:text-left'}`}>
+                    <div className="glass-card p-5 sm:p-7 rounded-2xl hover-lift transition-all duration-500 border-2 border-transparent hover:border-purple-500/30 group">
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                      
+                      <div className="relative z-10">
+                        <div className="inline-block px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-xs font-bold mb-3">
+                          {edu.graduated}
+                        </div>
+                        <h3 className="text-lg sm:text-xl font-bold text-hologram mb-2">
+                          {edu.degree}
+                        </h3>
+                        <p className="text-white/80 font-semibold mb-2 text-sm sm:text-base">
+                          {edu.school}
+                        </p>
+                        <p className="text-white/60 text-xs sm:text-sm">
+                          {edu.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Spacer for alternating layout */}
+                  <div className="hidden sm:block flex-1"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="skills" className="py-12 sm:py-24 px-4 sm:px-6 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10 sm:mb-16">
@@ -546,37 +622,35 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
             </p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-            {profileData?.skills?.map((skill:any, index:any) => {
-              const Icon = skill.icon;
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+            {profileData?.skills?.map((skillCategory:any, index:any) => {
+              const IconComponent = iconMap[skillCategory.icon] || Code;
               return (
-                <div key={index} className="group relative">
-                  <div className="glass-card rounded-2xl p-4 sm:p-6 hover-lift transition-all duration-500 border-2 border-transparent hover:border-purple-500/30 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div key={index} className="glass-card rounded-2xl p-5 sm:p-7 hover-lift transition-all duration-500 border-2 border-transparent hover:border-purple-500/30 relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
+                      <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r ${skillCategory.color} flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                        <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold text-white">
+                        {skillCategory.category}
+                      </h3>
+                    </div>
                     
-                    <div className="relative z-10">
-                      <div className={`w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-r ${skill.color} flex items-center justify-center mb-3 sm:mb-5 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                        <Icon className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
-                      </div>
-                      
-                      <h3 className="text-base sm:text-lg font-bold mb-2 group-hover:text-hologram transition-colors duration-300">{skill.name}</h3>
-                      <p className="text-xs sm:text-sm text-white/70 mb-2 sm:mb-3 leading-relaxed">{skill.description}</p>
-                      <p className="text-xs text-purple-400 font-semibold mb-3 sm:mb-5">{skill.projects}</p>
-                      
-                      <div className="relative">
-                        <div className="w-full bg-gray-800 rounded-full h-2.5 overflow-hidden">
-                          <div 
-                            className={`h-2.5 rounded-full bg-gradient-to-r ${skill.color} transition-all duration-1000 delay-${index * 200} relative overflow-hidden`}
-                            style={{ width: `${skill.level}%` }}
-                          >
-                            <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
-                          </div>
-                        </div>
-                        <div className="flex justify-between items-center mt-2">
-                          <span className="text-xs text-white/50">Proficiency</span>
-                          <span className="text-sm font-bold text-hologram">{skill.level}%</span>
-                        </div>
-                      </div>
+                    <div className="flex flex-wrap gap-2">
+                      {skillCategory.skills.map((skill: string, idx: number) => (
+                        <span 
+                          key={idx} 
+                          className={`px-3 py-1.5 text-xs sm:text-sm rounded-lg glass-card border bg-gradient-to-r ${skillCategory.color} bg-opacity-10 hover:bg-white/10 transition-all duration-300 cursor-default hover:scale-105`}
+                          style={{
+                            borderColor: 'rgba(139, 92, 246, 0.3)',
+                          }}
+                        >
+                          {skill}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -672,13 +746,13 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
       
       {/* View More Projects Button */}
       <div className="text-center mt-12 md:mt-16 px-2">
-        <button className="group px-6 md:px-10 py-4 md:py-5 glass-card rounded-xl md:rounded-2xl font-bold text-sm md:text-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105 border-2 border-purple-500/30 hover:border-purple-400 w-full sm:w-auto">
+        <a href="https://github.com/ai-engineer-devansh-singh?tab=repositories" target="_blank" rel="noopener noreferrer" className="group px-6 md:px-10 py-4 md:py-5 glass-card rounded-xl md:rounded-2xl font-bold text-sm md:text-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105 border-2 border-purple-500/30 hover:border-purple-400 w-full sm:w-auto inline-block">
           <span className="flex items-center justify-center gap-2 md:gap-3">
             <Github className="w-4 h-4 md:w-5 md:h-5" />
             <span className="truncate">View All Projects on GitHub</span>
             <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0" />
           </span>
-        </button>
+        </a>
       </div>
     </div>
   </section>
@@ -768,6 +842,102 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
     </div>
   </section>
 
+      {/* Achievements Section */}
+      <section id="achievements" className="py-12 sm:py-24 px-4 sm:px-6 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-4xl font-black mb-4 sm:mb-5">
+              <span className="text-hologram">Achievements & Contributions</span>
+            </h2>
+            <p className="text-sm sm:text-lg text-white/70 max-w-3xl mx-auto">
+              Milestones in my journey as a developer and contributor to the tech community
+            </p>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+            {profileData?.achievements?.map((achievement: any, index: number) => {
+              const IconComponent = iconMap[achievement.icon] || Star;
+              return (
+                <div key={index} className="glass-card p-6 sm:p-8 rounded-2xl hover-lift transition-all duration-500 border-2 border-transparent hover:border-purple-500/30 relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10">
+                    <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-r ${achievement.gradient} flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                      <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+                    </div>
+                    
+                    <h3 className="text-xl sm:text-2xl font-bold mb-3 group-hover:text-hologram transition-colors duration-300">
+                      {achievement.title}
+                    </h3>
+                    <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                      {achievement.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* LinkedIn Recommendations Section */}
+      <section id="recommendations" className="py-12 sm:py-24 px-4 sm:px-6 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-4xl font-black mb-4 sm:mb-5">
+              <span className="text-hologram">LinkedIn Recommendations</span>
+            </h2>
+            <p className="text-sm sm:text-lg text-white/70 max-w-3xl mx-auto">
+              What colleagues and clients say about working with me
+            </p>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-10">
+            {profileData?.recommendations?.map((rec: any, index: number) => (
+              <div key={index} className="glass-card p-6 sm:p-8 rounded-2xl hover-lift transition-all duration-500 border-2 border-transparent hover:border-purple-500/30 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10">
+                  <Quote className="w-8 h-8 text-purple-400 mb-4 opacity-50" />
+                  
+                  <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-6 line-clamp-6 group-hover:line-clamp-none transition-all duration-300">
+                    "{rec.text}"
+                  </p>
+                  
+                  <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-lg">
+                      {rec.name.charAt(0)}
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-white text-sm sm:text-base">{rec.name}</h4>
+                      <p className="text-white/60 text-xs sm:text-sm">{rec.title}</p>
+                      <p className="text-white/50 text-xs">{rec.company} • {rec.date}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-3 text-xs text-purple-400">
+                    {rec.relationship}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <a 
+              href="https://linkedin.com/in/iamdevanshsingh/details/recommendations/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 transform hover:scale-105 font-bold shadow-2xl hover:shadow-blue-500/50"
+            >
+              <Linkedin className="w-5 h-5" />
+              <span>View All Recommendations on LinkedIn</span>
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Enhanced Contact Section */}
      <section id="contact" className="py-12 md:py-24 px-4 md:px-6 relative">
     <div className="max-w-5xl mx-auto">
@@ -785,25 +955,25 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
           <div className="glass-card p-6 md:p-8 rounded-2xl md:rounded-3xl hover-lift transition-all duration-300">
             <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-hologram">Get in Touch</h3>
             <div className="space-y-4 md:space-y-6">
-              <a href="mailto:devanshsingh2199@gmail.com" 
+              <a href={`mailto:${profileData?.personalInfo?.email}`} 
                  className="group flex items-center gap-3 md:gap-4 p-3 md:p-4 glass-card rounded-lg md:rounded-xl hover:bg-white/10 transition-all duration-300">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg md:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Mail className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="font-semibold text-sm md:text-base">Email</div>
-                  <div className="text-white/70 text-xs md:text-sm truncate">devanshsingh2199@gmail.com</div>
+                  <div className="text-white/70 text-xs md:text-sm truncate">{profileData?.personalInfo?.email}</div>
                 </div>
               </a>
               
-              <a href="tel:+919461886086" 
+              <a href={`tel:${profileData?.personalInfo?.phone?.replace(/\s/g, '')}`} 
                  className="group flex items-center gap-3 md:gap-4 p-3 md:p-4 glass-card rounded-lg md:rounded-xl hover:bg-white/10 transition-all duration-300">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg md:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Phone className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
                 <div>
                   <div className="font-semibold text-sm md:text-base">Phone</div>
-                  <div className="text-white/70 text-xs md:text-sm">+91 9461886086</div>
+                  <div className="text-white/70 text-xs md:text-sm">{profileData?.personalInfo?.phone}</div>
                 </div>
               </a>
               
@@ -821,12 +991,12 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
           
           {/* Social Links */}
           <div className="flex gap-3 md:gap-4">
-            <a href="https://github.com/devanshsinghvaluecoders" target="_blank" rel="noopener noreferrer"
+            <a href={profileData?.socialLinks?.github} target="_blank" rel="noopener noreferrer"
                className="group flex-1 flex items-center justify-center gap-2 md:gap-3 p-3 md:p-4 glass-card rounded-lg md:rounded-xl hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
               <Github className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform duration-300" />
               <span className="font-semibold text-sm md:text-base">GitHub</span>
             </a>
-            <a href="https://www.linkedin.com/in/devansh-singh-0515001a0/" target="_blank" rel="noopener noreferrer"
+            <a href={profileData?.socialLinks?.linkedin} target="_blank" rel="noopener noreferrer"
                className="group flex-1 flex items-center justify-center gap-2 md:gap-3 p-3 md:p-4 glass-card rounded-lg md:rounded-xl hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
               <Linkedin className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform duration-300" />
               <span className="font-semibold text-sm md:text-base">LinkedIn</span>
@@ -847,7 +1017,7 @@ const [mousePosition, setMousePosition] = useState<{ x: number; y: number; times
               I'm here to help bring your vision to life with cutting-edge technology.
             </p>
             
-            <a href="mailto:devanshsingh2199@gmail.com" 
+            <a href={`mailto:${profileData?.personalInfo?.email}`} 
                className="inline-flex items-center gap-2 md:gap-3 px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl md:rounded-2xl hover:from-purple-500 hover:to-pink-500 transition-all duration-300 transform hover:scale-105 font-bold text-base md:text-lg shadow-2xl hover:shadow-purple-500/50">
               <span>Start Your Project</span>
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
